@@ -1,0 +1,25 @@
+{
+  "name": "cage_of_movies_client",
+  "version": "1.0.0",
+  "description": "Front end of a Nicolas Cage movie app",
+  "main": "src/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Scaramouche9/cage_of_movies_client.git"
+  },
+  "author": "Emily Davies",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Scaramouche9/cage_of_movies_client/issues"
+  },
+  "homepage": "https://github.com/Scaramouche9/cage_of_movies_client#readme",
+  "keywords": [
+    "Nicolas",
+    "Cage",
+    "movies",
+    "database"
+  ]
+}
