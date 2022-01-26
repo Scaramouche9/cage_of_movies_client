@@ -1,25 +1,32 @@
 {
-  "name": "cage_of_movies_client",
-  "version": "1.0.0",
-  "description": "Front end of a Nicolas Cage movie app",
-  "main": "src/index.html",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Scaramouche9/cage_of_movies_client.git"
-  },
-  "author": "Emily Davies",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Scaramouche9/cage_of_movies_client/issues"
-  },
-  "homepage": "https://github.com/Scaramouche9/cage_of_movies_client#readme",
-  "keywords": [
-    "Nicolas",
-    "Cage",
-    "movies",
-    "database"
-  ]
+	"name": "cage_of_movies_client",
+	"version": "1.0.0",
+	"description": "Front end of a Nicolas Cage movie app",
+	"default": "src/index.html",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Scaramouche9/cage_of_movies_client.git"
+	},
+	"author": "Emily Davies",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/Scaramouche9/cage_of_movies_client/issues"
+	},
+	"homepage": "https://github.com/Scaramouche9/cage_of_movies_client#readme",
+	"keywords": [
+		"Nicolas",
+		"Cage",
+		"movies",
+		"database"
+	],
+	"dependencies": {
+		"react": "^17.0.2",
+		"react-dom": "^17.0.2"
+	},
+	"devDependencies": {
+		"@parcel/transformer-sass": "^2.0.0-rc.0"
+	}
 }
