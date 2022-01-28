@@ -15,10 +15,14 @@ This app contains information about various Nicolas Cage movies including direct
 Tools used:
 This app was built using HTML5, SCSS, and JavaScript ES6 languages. I used:
 -Parcel to complete my build process, including transpilation, minification, bundling, and auto-prefixing
+-React to create components for a single page application
 
 Future plans:
 I intend to create a front end user interface for this API using React.
 
 ## Usage <a name = "usage"></a>
 
-To use, clone the code and open http://localhost:1234 on your browser.
+1. Clone the code
+2. Install parcel globally by entering 'npm install -g parcel-bundler'
+3. Run 'parcel src/index.html' in your terminal to build code, making it browser friendly
+4. Open http://localhost:1234 on your browser.
