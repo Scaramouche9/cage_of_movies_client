@@ -5,17 +5,33 @@ export class MovieView extends React.Component {
   render() {
     const { movie, onBackClick } = this.props;
     return (
-      <div className="movie-view">
-        <div className="movie-poster">
-          <img src={movie.ImagePath} crossOrigin="anonymous" />
+      <div className='movie-view'>
+        <div className='movie-poster'>
+          <img src={movie.ImagePath} crossOrigin='anonymous' />
         </div>
-        <div className="movie-title">
-          <span className="label">Title: </span>
-          <span className="value">{movie.Title}</span>
+        <div className='movie-title'>
+          <span className='label'>Title: </span>
+          <span className='value'>{movie.Title}</span>
         </div>
-        <div className="movie-description">
-          <span className="label">Description: </span>
-          <span className="value">{movie.Description}</span>
+        <div className='movie-year'>
+          <span className='label'>Year: </span>
+          <span className='value'>{movie.Year}</span>
+        </div>
+        <div className='movie-rating'>
+          <span className='label'>Rating: </span>
+          <span className='value'>{movie.Rating}</span>
+        </div>
+        <div className='movie-genre'>
+          <span className='label'>Genre: </span>
+          <a href='' className='value'>{movie.Genre}</a>
+        </div>
+        <div className='movie-director'>
+          <span className='label'>Director: </span>
+          <a href='' className='value'>{movie.Director}</a>
+        </div>
+        <div className='movie-description'>
+          <span className='label'>Description: </span>
+          <span className='value'>{movie.Description}</span>
         </div>
         <button onClick={() => { onBackClick(null); }}>Back</button>
       </div>
@@ -27,8 +43,20 @@ MovieView.propTypes = {
   movie: PropTypes.shape({
     Title: PropTypes.string.isRequired,
     Description: PropTypes.string.isRequired,
-    ImagePath: PropTypes.string.isRequired,
+    Genre: PropTypes.shape({
+      Name: PropTypes.string.isRequired,
+      Description: PropTypes.string.isRequired
+    }).isRequired,
+    Director: PropTypes.shape({
+      Name: PropTypes.string.isRequired,
+      Bio: PropTypes.string.isRequired,
+      BirthYear: PropTypes.string.isRequired,
+      DeathYear: PropTypes.string.isRequired
+    }).isRequired,
     Year: PropTypes.number.isRequired,
+    Rating: PropTypes.string.isRequired,
+    ImagePath: PropTypes.string.isRequired,
     Featured: PropTypes.bool.isRequired
-  }).isRequired
-}
+  }).isRequired,
+  onMovieClick: PropTypes.func.isRequired
+};
