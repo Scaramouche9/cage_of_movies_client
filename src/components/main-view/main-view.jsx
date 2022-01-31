@@ -28,12 +28,14 @@ export class MainView extends React.Component {
       });
   }
 
+  // When a movie is clicked, this function is invoked and updates the state of the 'selectedMovie' property to that movie
   setSelectedMovie(newSelectedMovie) {
     this.setState({
       selectedMovie: newSelectedMovie
     });
   }
 
+  // When a user successfully logs in, this function updates the 'user' property in state to that user
   onLoggedIn(user) {
     this.setState({
       user
@@ -42,11 +44,17 @@ export class MainView extends React.Component {
 
   render() {
     const { movies, selectedMovie } = this.state;
+
+    // If there is no user, the LoginView is rendered; otherwise, user details are passes as a prop to the LoginView
     if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
+
+    // Before the movies have been loaded
     if (movies.length === 0) return <div className='main-view'/>;
       return (
         <div className='main-view'>
           {selectedMovie
+            
+            // If state of 'selectedMovie' is not null, selected movie will be returned; otherwise, all movies will be returned
             ? <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => {
               this.setSelectedMovie(newSelectedMovie);
             }} />
