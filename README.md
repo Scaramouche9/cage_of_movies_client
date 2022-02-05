@@ -16,6 +16,9 @@ Tools used:
 This app was built using HTML5, SCSS, and JavaScript ES6 languages. I used:
 -Parcel to complete my build process, including transpilation, minification, bundling, and auto-prefixing
 -React to create components for a single page application
+-Axios to link API to client side
+-PropTypes to check for errors in browser inspect
+-React Bootstrap to apply consistent design in my UI
 
 Future plans:
 I intend to create a front end user interface for this API using React.
