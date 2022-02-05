@@ -1,0 +1,30 @@
+body {
+	background-color: var(--primary-color-darker);
+	background-size: cover;
+	background-attachment: fixed;
+	font-family: var(--primary-font);
+	font-weight: var(--primary-font-light-normal);
+	color: var(--primary-color-lighter);
+}
+
+// Auto-prefix!!
+
+// Grid Fallback
+.movie__grid--item {
+	display: inline-block;
+	width: 25%;
+}
+
+.movie__grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	gap: 2%;
+	margin: 2%;
+	align-items: stretch;
+}
+
+.movie__grid--item {
+	width: auto;
+	margin: 2%;
+	padding: 2%;
+}

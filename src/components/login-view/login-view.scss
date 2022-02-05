@@ -1,0 +1,58 @@
+body {
+	background-color: var(--secondary-color-darker) !important;
+}
+
+.app-container {
+	background-color: var(--secondary-color-darker);
+	background-size: 100%;
+	font-family: var(--primary-font);
+	font-weight: var(--primary-font-light-normal);
+	color: var(--primary-color-lighter);
+	margin-top: 10%;
+}
+
+.card {
+	border: none !important;
+}
+
+.card-body {
+	height: 100%;
+	background-color: var(--primary-color-darker);
+}
+
+// Attempt to change this coloring still not working
+.form-control {
+	background-color: var(--primary-color-lighter) !important;
+	color: var(--primary-color-darker) !important;
+	font-weight: var(--primary-font-bold-normal);
+	font-family: var(--primary-font);
+	border-style: inset !important;
+	border-color: var(--secondary-color) !important;
+}
+
+.form-control:focus,
+.form-control:hover,
+.form-control:active {
+	background-color: var(--primary-color-lighter) !important;
+	color: var(--primary-color-darker) !important;
+	font-weight: var(--primary-font-bold-normal);
+	font-family: var(--primary-font);
+	border-style: inset !important;
+	border-color: var(--secondary-color) !important;
+}
+
+button.btn-primary {
+	background-color: var(--primary-color-darker);
+	color: var(--primary-color-lighter);
+	border-style: outset;
+	border-color: var(--primary-color);
+	margin-top: 2%;
+}
+
+button.btn-primary:hover,
+button.btn-primary:focus {
+	background-color: var(--primary-color-darker);
+	color: var(--primary-color-lighter);
+	border-style: inset;
+	border-color: var(--primary-color);
+}

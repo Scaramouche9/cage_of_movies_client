@@ -17,6 +17,10 @@ export class MovieView extends React.Component {
               <div className='movie-poster'>
                 <img src={movie.ImagePath} crossOrigin='anonymous' />
               </div>
+            </div>
+          </Col>
+          <Col>
+            <div className='movie-view justify-content-md-center'>
               <div className='movie-text-info'>
                 <div className='movie-title'>
                   <span className='label'>Title: </span>
@@ -45,7 +49,7 @@ export class MovieView extends React.Component {
               </div>
               <Button className='movie-view-btn' onClick={() => { onBackClick(null); }}>Back</Button>
             </div>
-          </Col>
+              </Col>
         </Row>
       </Container>
     );
