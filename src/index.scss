@@ -1,5 +1,14 @@
-$color: forestgreen;
-
-.cage-of-movies {
-	color: $color;
+// Variables
+:root {
+	--primary-color: #00ab0b;
+	--secondary-color: #84ca00;
+	--primary-color-darker: #09220b;
+	--primary-color-lighter: #a4ffaa;
+	--secondary-color-lighter: #dfffa4;
+	--secondary-color-darker: #466b00;
+	--primary-font: 'Montserrat', sans-serif;
+	--primary-font-light-normal: 0, 100;
+	--primary-font-light-italic: 1, 100;
+	--primary-font-bold-normal: 0, 300;
+	--primary-font-bold-italic: 1, 300;
 }
