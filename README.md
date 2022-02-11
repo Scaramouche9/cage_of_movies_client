@@ -19,6 +19,8 @@ This app was built using HTML5, SCSS, and JavaScript ES6 languages. I used:
 -Axios to link API to client side
 -PropTypes to check for errors in browser inspect
 -React Bootstrap to apply consistent design in my UI
+-JWT (JSON Web Token) for authentication and authorization
+-React Router to set up routes to different views within the browser
 
 Future plans:
 I intend to create a front end user interface for this API using React.
