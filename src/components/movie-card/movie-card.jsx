@@ -14,7 +14,9 @@ export class MovieCard extends React.Component {
         <Card.Body>
           <Card.Title>{movie.Title}</Card.Title>
           <Card.Text>{movie.Description}</Card.Text>
-          <Button onClick={() => onMovieClick(movie)}>Open</Button>
+          <Link to={`/movies/${movie._id}`}>
+            <Button>Open</Button>
+          </Link>
         </Card.Body>
       </Card>
     );
@@ -28,5 +30,6 @@ MovieCard.propTypes = {
     Year: PropTypes.string.isRequired,
     ImagePath: PropTypes.string.isRequired,
     Featured: PropTypes.bool.isRequired
-  }).isRequired
-}
+  }).isRequired,
+  onBackClick: PropTypes.func.isRequired
+};
