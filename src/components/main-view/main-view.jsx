@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import { BrowserRouter as Router, Route, Redirect, Routes } from 'react-router-dom';
 
 import { LoginView } from '../login-view/login-view';
 import { MovieCard } from '../movie-card/movie-card';
@@ -7,6 +8,7 @@ import { MovieView } from '../movie-view/movie-view';
 
 import './main-view.scss';
 import { Row, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 export class MainView extends React.Component {
   constructor() {
     super();
