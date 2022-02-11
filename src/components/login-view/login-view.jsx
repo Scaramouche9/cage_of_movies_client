@@ -8,9 +8,32 @@ import './login-view.scss';
 export function LoginView(props) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [usernameErr, setUsernameErr] = useState('');
+  const [passwordErr, setPasswordErr] = useState('');
+
+  const validate = () => {
+    let isReq = true;
+    if (!username) {
+      setUsernameErr('Username required');
+      isReq = false;
+    } else if (username.length < 8) {
+      setUsernameErr('Username must be at least 8 characters long');
+      isReq = false;
+    }
+    if (!password) {
+      setPasswordErr('Password required');
+      isReq = false;
+    } else if (password.length < 12) {
+      setPasswordErr('Password must be at least 12 characters long');
+      isReq = false;
+    }
+    return isReq;
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const isReq = validate();
+    if(isReq) {
     // Send a request to the server for authentication
     axios.post(`https://cage-of-movies.herokuapp.com/login`, {
       Username: username,
@@ -23,6 +46,7 @@ export function LoginView(props) {
       .catch(e => {
         console.log('no such user')
       });
+    }
   };
 
   return (
@@ -50,7 +74,6 @@ export function LoginView(props) {
         </Col>
       </Row>
     </Container>
-    // register button?
   );
 }
 
