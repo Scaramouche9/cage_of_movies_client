@@ -5,6 +5,10 @@ import { BrowserRouter as Router, Route, Redirect, Routes } from 'react-router-d
 import { LoginView } from '../login-view/login-view';
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
+import { RegistrationView } from '../registration-view/registration-view';
+import { DirectorView } from '../director-view/director-view'
+import { GenreView } from '../genre-view/genre-view';
+import { ProfileView } from '../profile-view/profile-view';
 
 import './main-view.scss';
 import { Row, Col } from 'react-bootstrap';
@@ -89,7 +93,56 @@ export class MainView extends React.Component {
                   <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => {
                     this.setSelectedMovie(newSelectedMovie);
                 }} />
+          // Director view
+          <Route exact path='/directors/:name' render={({ match, history }) => {
+            if (!user) return
+            <Col>
+              <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
+            </Col>
+
+            if (movies.length === 0) return <div className='main-view' />; return (
+            <Col md={8}>
+              <DirectorView
+                director={movies.find(m => m.Director.Name === match.params.name).Director}
+                onBackClick={() => history.goBack()}
+              />
+              </Col>
+            )
+          }} />
+
+          // Genre view
+          <Route exact path='/genres/:name' render={({ match, history }) => {
+            if (!user) return
+            <Col>
+              <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
+            </Col>
+
+            if (movies.length === 0) return <div className='main-view' />; return (
+            <Col md={8}>
+              <GenreView
+                genre={movies.find(m => m.Genre.Name === match.params.name).Genre}
+                onBackClick={() => history.goBack()}
+              />
+              </Col>
+            )
+          }} />
+
+          // Profile view
+          <Route path='/users/${user}' render={({ history }) => {
+            if (!user)
+              return (
+                <Col>
+                  <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />
                 </Col>
+              );
+            if (movies.length === 0) return <div className='main-view' />;
+            return (
+              <Col>
+                <ProfileView
+                  user={user}
+                  movies={movies}
+                  onBackClick={() => history.goBack()}/>
+              </Col>
             )
             : movies.map(movie => (
                   <Col md={3} key={movie._id}>
@@ -105,5 +158,19 @@ export class MainView extends React.Component {
           }
         </Row>
       );
+          }} />
+
+          // Registration view
+          <Route path='/register' render={() => {
+            if (user) return <Redirect to="/" />
+              return (
+                <Col>
+                  <RegistrationView />
+                </Col>
+              )
+          }} />
+        </Routes>
+      </Router>
+    );
   }
-}
+} 
