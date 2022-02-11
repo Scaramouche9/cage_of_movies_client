@@ -11,15 +11,16 @@ import { GenreView } from '../genre-view/genre-view';
 import { ProfileView } from '../profile-view/profile-view';
 
 import './main-view.scss';
-import { Row, Col } from 'react-bootstrap';
+import { Navbar, Row, Col, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+
 export class MainView extends React.Component {
+
   constructor() {
     super();
     // Initial state is set to null
     this.state = {
       movies: [],
-      selectedMovie: null,
       user: null
     };
   }
@@ -70,7 +71,7 @@ export class MainView extends React.Component {
   }
 
   render() {
-    const { movies, selectedMovie, user } = this.state;
+    const { movies, user } = this.state;
 
     // If there is no user, the LoginView is rendered; otherwise, user details are passes as a prop to the LoginView
     return (

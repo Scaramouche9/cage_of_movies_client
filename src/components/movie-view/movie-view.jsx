@@ -1,11 +1,10 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
+import { Container, Row, Col, Button } from 'react-bootstrap';
 
 // SCSS Import
 import './movie-view.scss'
 
-// React Bootstrap Import
-import { Container, Row, Col, Button } from 'react-bootstrap';
 export class MovieView extends React.Component {
   render() {
     const { movie, onBackClick } = this.props;
@@ -47,7 +46,7 @@ export class MovieView extends React.Component {
                   <span className='value'>{movie.Description}</span>
                 </div>
               </div>
-              <Button className='movie-view-btn' onClick={() => { onBackClick(null); }}>Back</Button>
+              <Button onClick={() => { onBackClick(null); }}>Back</Button>
             </div>
               </Col>
         </Row>
