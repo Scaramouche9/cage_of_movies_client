@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from 'axios';
 import { PropTypes } from 'prop-types';
 import { Form, Button, Container, Row, Col, Card, CardGroup } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 import './login-view.scss';
 
@@ -39,7 +40,7 @@ export function LoginView(props) {
       Username: username,
       Password: password
     })
-      .then(response =>{
+      .then(response => {
         const data = response.data;
         props.onLoggedIn(data);
       })
@@ -54,7 +55,7 @@ export function LoginView(props) {
       <Row>
         <Col>
           <CardGroup>
-            <Card>
+            <Card id='login-card'>
               <Card.Body>
                 <Card.Title>To enter the Cage of Movies, please login: </Card.Title>
                 <Form>
@@ -71,6 +72,18 @@ export function LoginView(props) {
               </Card.Body>
             </Card>
           </CardGroup>
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <Card id='register-card'>
+                <Card.Body>
+                  <Card.Title>Dont' Have an Account?</Card.Title>
+                  <Link to={`/register`}>
+                    <Button>Register Here</Button>
+                  </Link>
+              </Card.Body>
+          </Card>
         </Col>
       </Row>
     </Container>
