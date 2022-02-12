@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { BrowserRouter as Router, Route, Redirect, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 
 import { LoginView } from '../login-view/login-view';
 import { MovieCard } from '../movie-card/movie-card';
@@ -11,7 +11,7 @@ import { GenreView } from '../genre-view/genre-view';
 import { ProfileView } from '../profile-view/profile-view';
 
 import './main-view.scss';
-import { Navbar, Row, Col, Button } from 'react-bootstrap';
+import { Navbar, Col, Button, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 export class MainView extends React.Component {
@@ -77,24 +77,26 @@ export class MainView extends React.Component {
     return (
       <Router>
         <Navbar>
-          <Navbar.Brand>
+          <Navbar.Brand id='cage-logo'>
             <Link to={'/'}>
               Cage of Movies
             </Link>
           </Navbar.Brand>
           {user && (
             <Navbar.Collapse className='justify-content-end'>
-              <Link to={`/users/${user}`}>
-                <Button>My Profile</Button>
+              <Link to={`/users/${user}`} className='nav-button'>
+                My Profile
               </Link>
-              <Button onClick={() => this.onLoggedOut()}>Logout</Button>
+              <Link to={`/`} onClick={() => this.onLoggedOut()} className='nav-button'>
+                Logout
+              </Link>
             </Navbar.Collapse>
           )}
         </Navbar>
 
-        <Routes className='main-view justify-content-md-center'>
+        <Row className='main-view justify-content-md-center'>
 
-          // Login view
+          {/* Login view */}
           <Route exact path="/" render={() => {
             if (!user) return (
               < Col >
@@ -113,7 +115,7 @@ export class MainView extends React.Component {
           }}
           />
 
-          // Single movie view
+          {/*Single movie view*/}
           <Route path='/movies/:movieId' render={({ match, history }) => {
             if (!user)
               return
@@ -132,7 +134,7 @@ export class MainView extends React.Component {
             )
           }} />
 
-          // Director view
+          {/*Director view*/}
           <Route exact path='/directors/:name' render={({ match, history }) => {
             if (!user) return
             <Col>
@@ -149,7 +151,7 @@ export class MainView extends React.Component {
             )
           }} />
 
-          // Genre view
+          {/*Genre view*/}
           <Route exact path='/genres/:name' render={({ match, history }) => {
             if (!user) return
             <Col>
@@ -166,7 +168,7 @@ export class MainView extends React.Component {
             )
           }} />
 
-          // Profile view
+          {/*Profile view*/}
           <Route path='/users/${user}' render={({ history }) => {
             if (!user)
               return (
@@ -185,7 +187,7 @@ export class MainView extends React.Component {
             )
           }} />
 
-          // Registration view
+          {/*Registration view*/}
           <Route path='/register' render={() => {
             if (user) return <Redirect to="/" />
               return (
@@ -194,7 +196,7 @@ export class MainView extends React.Component {
                 </Col>
               )
           }} />
-        </Routes>
+        </Row>
       </Router>
     );
   }
