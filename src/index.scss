@@ -12,3 +12,17 @@
 	--primary-font-bold-normal: 0, 300;
 	--primary-font-bold-italic: 1, 300;
 }
+
+#cage-logo {
+	color: var(--primary-color-darker);
+}
+
+a {
+	color: var(--primary-color-darker) !important;
+}
+
+a:active,
+a:hover,
+a:focus {
+	color: var(--primary-color-darker) !important;
+}
