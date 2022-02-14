@@ -57,6 +57,7 @@ export function RegistrationView(props) {
         .then(response => {
           const data = response.data;
           console.log(data);
+          props.onRegistered(data);
           window.open('/', '_self'); // opens in current tab 
         })
         .catch(e => {
@@ -128,9 +129,11 @@ export function RegistrationView(props) {
 }
 
 RegistrationView.propTypes = {
-  username: PropTypes.string.isRequired,
-  password: PropTypes.string.isRequired,
-  email: PropTypes.string.isRequired,
-  birthday: PropTypes.string.isRequired,
-  onRegistration: PropTypes.func.isRequired
+  user: PropTypes.shape({
+    username: PropTypes.string.isRequired,
+    password: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+    birthday: PropTypes.string.isRequired,
+  }),
+  onRegistered: PropTypes.func.isRequired
 };
